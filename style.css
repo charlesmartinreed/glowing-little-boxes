@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  background-color: #111;
+  min-height: 100vh;
+  /* max-width: 1100px; */
+  /* margin: 0 auto; */
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  /* display: grid; */
+  /* grid-template-columns: 1fr; */
+  /* justify-content: center; */
+  /* align-items: center; */
+  /* position: relative; */
+}
+
+.board-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.board-space {
+  cursor: crosshair;
+  background-color: #1d1d1d;
+  box-shadow: 0 0 2px #000;
+  display: inline-block;
+  height: 16px;
+  width: 16px;
+  margin: 2px;
+  border-radius: 4px;
+  overflow: visible;
+
+  /* transition: transform 2.3s cubic-bezier(0.6, -0.28, 0.735, 0.045),
+    background-color 2s ease, box-shadow 2s ease; */
+  transition: 2s ease-in-out, transform 3s linear;
+}
+
+.board-space:hover,
+.board-space.active {
+  /* hover onto is instant, hover out of takes 2 seconds */
+  /* this creates a fade effect */
+  transform: scale(2);
+}
+
+.board-space.active {
+  transition-duration: 2s;
+}
+
+.board-space:hover {
+  transition-duration: 0s;
+}
+
+@media screen and (max-width: 667px) {
+  .board-space {
+    height: 14px;
+    width: 14px;
+  }
+}
+
+/* CURRENTLY UNUSED, BUT LEAVING THESE HERE */
+/* IN CASE I NEED TO THROW UP A QUICK, STYLED BUTTON */
+/* button {
+  cursor: pointer; */
+
+/* position: fixed; */
+/* top: 5%; */
+/* left: 50%; */
+/* transform: translate(-50%, -5%); */
+
+/* background-color: #1d1d1d;
+  color: rgba(253, 253, 253, 0.3);
+  padding: 1em 3em;
+  margin: 2em 0;
+  width: 300px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  box-shadow: 0px 2px 3px #000;
+
+  text-transform: uppercase;
+  font-size: 14px;
+  font-weight: 800;
+  transition: filter 0.4s linear, box-shadow 0.2s ease;
+  letter-spacing: 0.125em; */
+/* } */
+
+/* button:hover {
+  filter: sepia(1);
+} */
+
+/* button,
+button.active {
+  box-shadow: 0px 0px 16px 4px rgba(49, 45, 45, 0.4);
+} */
